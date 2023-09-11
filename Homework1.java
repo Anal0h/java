@@ -44,9 +44,9 @@ public class Homework1 {
 
     // task 3
     static int max(int x, int y, int z) {
-        int maximum1 = Math.max(x, y);
-        int maximum2 = Math.max(maximum1, z);
-        return maximum2;
+        int FirstMax = Math.max(x, y);
+        int SecondMax = Math.max(FirstMax, z);
+        return SecondMax;
     }
 
 
@@ -54,7 +54,7 @@ public class Homework1 {
     static int fact(int n) {
         int res = 1;
         for (int i = 1; i <= n; ++i) {
-            res = res*i;
+            res = res * i;
         }
         return res;
     }
@@ -71,12 +71,12 @@ public class Homework1 {
     // task 6
     static void multiplTable() {
         for (int i = 1; i <= 9; ++i) {
-            for (int j = 1; j <= 9; ++ j) {
-                if (i*j < 10){
-                    System.out.print(" "+i*j+" ");
+            for (int j = 1; j <= 9; ++j) {
+                if (i * j < 10){
+                    System.out.print(" " + i * j + " ");
                 }
                 else{
-                    System.out.print(i*j+" ");
+                    System.out.print(i * j + " ");
                 }
             }
             System.out.println();
@@ -91,7 +91,7 @@ public class Homework1 {
         for (int i = 0; i < l; i++){
             sum += nums[i];
         }
-        return sum/l;
+        return sum / l;
     }
 
 
@@ -160,11 +160,11 @@ public class Homework1 {
     // task 9
     static int[] reverse(int[] arr) {
         int l = arr.length;
-        int[] arr1 = new int[l];
+        int[] ReverseArr = new int[l];
         for (int i = 0; i < l; ++i) {
-            arr1[i] = arr[l-i-1];
+            ReverseArr[i] = arr[l - i - 1];
         }
-        return arr1;
+        return ReverseArr;
     }
 
 
@@ -172,11 +172,11 @@ public class Homework1 {
     static int[] sort(int[] arr) {
         int l = arr.length, t = 0;
         for (int i = 0; i < l; ++i) {
-            for (int j = 0; j < l-i-1; ++j) {
-                if (arr[j+1] < arr[j]) {
+            for (int j = 0; j < l - i - 1; ++j) {
+                if (arr[j + 1] < arr[j]) {
                     t = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = t;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
                 }
             }
         }
@@ -191,7 +191,7 @@ public class Homework1 {
             if (arr[i] == n) {
                 int[] a = new int[l-1];
                 System.arraycopy(arr, 0, a, 0, i);
-                System.arraycopy(arr, i + 1, a, i, l-i-1);
+                System.arraycopy(arr, i + 1, a, i, l - i - 1);
                 arr = a;
                 --l;
                 --i;
