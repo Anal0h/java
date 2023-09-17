@@ -44,9 +44,9 @@ public class Homework1 {
 
     // task 3
     static int max(int x, int y, int z) {
-        int FirstMax = Math.max(x, y);
-        int SecondMax = Math.max(FirstMax, z);
-        return SecondMax;
+        int firstMax = Math.max(x, y);
+        int secondMax = Math.max(firstMax, z);
+        return secondMax;
     }
 
 
@@ -85,20 +85,17 @@ public class Homework1 {
 
 
     // task 7
-    static int average(int... nums) {
-        int l = nums.length;
-        int sum = 0;
-        for (int i = 0; i < l; i++){
-            sum += nums[i];
-        }
-        return sum / l;
+    static double average(int... nums) {
+        return Arrays.stream(nums).average().orElse(Double.NaN);
     }
 
 
     // task 8
     static boolean isMagicSquare(int[][] square) {
         int l = square[0].length;
-        int line = 0, sum = 0, f = 0;
+        int line = 0;
+        int sum = 0;
+        int f = 0;
         for (int i = 0; i < l; ++i){
             line += square[0][i];
         }
@@ -160,17 +157,18 @@ public class Homework1 {
     // task 9
     static int[] reverse(int[] arr) {
         int l = arr.length;
-        int[] ReverseArr = new int[l];
+        int[] reverseArr = new int[l];
         for (int i = 0; i < l; ++i) {
-            ReverseArr[i] = arr[l - i - 1];
+            reverseArr[i] = arr[l - i - 1];
         }
-        return ReverseArr;
+        return reverseArr;
     }
 
 
     // task 10
     static int[] sort(int[] arr) {
-        int l = arr.length, t = 0;
+        int l = arr.length;
+        int t = 0;
         for (int i = 0; i < l; ++i) {
             for (int j = 0; j < l - i - 1; ++j) {
                 if (arr[j + 1] < arr[j]) {
