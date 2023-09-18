@@ -85,8 +85,18 @@ public class Homework1 {
 
 
     // task 7
-    static double average(int... nums) {
-        return Arrays.stream(nums).average().orElse(Double.NaN);
+    static int average(int... nums) {
+        int l = nums.length;
+        if (l == 0) {
+            return 0;
+        } 
+        else {
+            int sum = 0;
+            for (int i = 0; i < l; i++) {
+                sum += nums[i];
+            }
+            return sum / l;
+        }
     }
 
 
