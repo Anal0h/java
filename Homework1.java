@@ -85,7 +85,7 @@ public class Homework1 {
 
 
     // task 7
-    static int average(int... nums) {
+    static double average(int... nums) {
         int l = nums.length;
         if (l == 0) {
             return 0;
