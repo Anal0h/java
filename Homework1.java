@@ -1,5 +1,3 @@
-package com.example.demo4;
-
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -44,9 +42,8 @@ public class Homework1 {
 
     // task 3
     static int max(int x, int y, int z) {
-        int firstMax = Math.max(x, y);
-        int secondMax = Math.max(firstMax, z);
-        return secondMax;
+        int Max = Math.max(Math.max(x, y), z);
+        return Max;
     }
 
 
@@ -62,7 +59,7 @@ public class Homework1 {
 
     // task 5
     static BigInteger fact(BigInteger n) {
-        if (n == BigInteger.ZERO || n == BigInteger.ONE) {
+        if (n.equals(BigInteger.ZERO) || n.equals(BigInteger.ONE)) {
             return BigInteger.ONE;
         }
         return n.multiply(fact(n.subtract(BigInteger.ONE)));
@@ -72,10 +69,9 @@ public class Homework1 {
     static void multiplTable() {
         for (int i = 1; i <= 9; ++i) {
             for (int j = 1; j <= 9; ++j) {
-                if (i * j < 10){
+                if (i * j < 10) {
                     System.out.print(" " + i * j + " ");
-                }
-                else{
+                } else {
                     System.out.print(i * j + " ");
                 }
             }
@@ -89,8 +85,7 @@ public class Homework1 {
         int l = nums.length;
         if (l == 0) {
             return 0;
-        } 
-        else {
+        } else {
             int sum = 0;
             for (int i = 0; i < l; i++) {
                 sum += nums[i];
@@ -106,30 +101,28 @@ public class Homework1 {
         int line = 0;
         int sum = 0;
         int f = 0;
-        for (int i = 0; i < l; ++i){
+        for (int i = 0; i < l; ++i) {
             line += square[0][i];
         }
-        for (int i = 0; i < l; ++i){
-            for (int j = 0; j < l; ++j){
+        for (int i = 0; i < l; ++i) {
+            for (int j = 0; j < l; ++j) {
                 sum += square[i][j];
             }
-            if (sum == line){
+            if (sum == line) {
                 sum = 0;
-            }
-            else {
+            } else {
                 f = 1;
                 break;
             }
         }
 
-        for (int i = 0; i < l; ++i){
-            for (int j = 0; j < l; ++j){
+        for (int i = 0; i < l; ++i) {
+            for (int j = 0; j < l; ++j) {
                 sum += square[j][i];
             }
-            if (sum == line){
+            if (sum == line) {
                 sum = 0;
-            }
-            else {
+            } else {
                 f = 1;
                 break;
             }
@@ -138,27 +131,24 @@ public class Homework1 {
         for (int i = 0; i < l; ++i) {
             sum += square[i][i];
         }
-        if (sum == line){
+        if (sum == line) {
             sum = 0;
-        }
-        else {
+        } else {
             f = 1;
         }
 
         for (int i = l - 1; i >= 0; --i) {
             sum += square[i][i];
         }
-        if (sum == line){
+        if (sum == line) {
             sum = 0;
-        }
-        else {
+        } else {
             f = 1;
         }
 
-        if (f == 0){
+        if (f == 0) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -167,11 +157,13 @@ public class Homework1 {
     // task 9
     static int[] reverse(int[] arr) {
         int l = arr.length;
-        int[] reverseArr = new int[l];
-        for (int i = 0; i < l; ++i) {
-            reverseArr[i] = arr[l - i - 1];
+        int swap;
+        for (int i = 0; i < l / 2; ++i) {
+            swap = arr[i];
+            arr[i] = arr[l - i - 1];
+            arr[l - i - 1] = swap;
         }
-        return reverseArr;
+        return arr;
     }
 
 
@@ -197,7 +189,7 @@ public class Homework1 {
         int l = arr.length;
         for (int i = 0; i < l; ++i) {
             if (arr[i] == n) {
-                int[] a = new int[l-1];
+                int[] a = new int[l - 1];
                 System.arraycopy(arr, 0, a, 0, i);
                 System.arraycopy(arr, i + 1, a, i, l - i - 1);
                 arr = a;
