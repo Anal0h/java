@@ -1,9 +1,9 @@
-package java.Task7;
+package Task7;
 
 public class Task7 {
     public static void main(String[] args) {
-        Car1.Engine engine = new Car1.Engine(10);
-        Car1 three = new Car1.Builder(240, "audi", engine)
+        CarFirst.Engine engine = new CarFirst.Engine(10);
+        CarFirst three = new CarFirst.Builder(240, "audi", engine)
                 .colour("black")
                 .fuel(0)
                 .mileage(1000)

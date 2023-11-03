@@ -1,7 +1,7 @@
-package java.Task4;
+package Task4;
 
 public class Car {
-    private String colour;
+    private final String colour;
     private int fuel;
     private final int maxFuel;
     private final String model;
@@ -22,7 +22,7 @@ public class Car {
         System.out.println("Осталось " + this.fuel + " литров топлива");
         System.out.println("Максимальная вместимость бака: " + this.maxFuel + " литров.");
         System.out.println("Модель авто: " + this.model + ".");
-        if (this.engine.turn == true) {
+        if (this.engine.turn) {
             System.out.println("Двигатель включён.");
         } else {
             System.out.println("Двигатель выключен.");
@@ -49,7 +49,7 @@ public class Car {
 
     public void start() {
         this.engine.engineOn();
-        while (this.engine.turn == true) {
+        while (this.engine.turn) {
             if (this.fuel >= this.engine.fuelCons) {
                 this.fuel -= this.engine.fuelCons;
                 this.mileage += 100;
@@ -60,13 +60,16 @@ public class Car {
         }
     }
 
-    public void getMileage() {
-        System.out.println("Автомобиль проехал " + this.mileage + " км.");
+    public int getMileage() {
+        return this.mileage;
+    }
+    public void printMileage() {
+        System.out.println("Автомобиль проехал " + getMileage() + " км.");
     }
 
-    public class Engine {
+    public static class Engine {
         private boolean turn;
-        private int fuelCons;
+        private final int fuelCons;
 
         public Engine(int fuelCons) {
             this.turn = false;

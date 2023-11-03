@@ -1,6 +1,6 @@
-package java.Task7;
+package Task7;
 
-public class Car1 {
+public class CarFirst {
     private String colour;
     private int fuel;
     private final int maxFuel;
@@ -37,12 +37,12 @@ public class Car1 {
             return this;
         }
 
-        public Car1 build() {
-            return new Car1(this);
+        public CarFirst build() {
+            return new CarFirst(this);
         }
     }
 
-    private Car1(Builder builder) {
+    private CarFirst(Builder builder) {
         this.colour = builder.colour;
         this.fuel = builder.fuel;
         this.maxFuel = builder.maxFuel;

@@ -1,4 +1,4 @@
-package java.Task5;
+package Task5;
 
 public class Pet {
     private String name;
@@ -21,7 +21,7 @@ public class Pet {
         return this.name;
     }
 
-    public enum price {
+    public enum Price {
         CHEAP, EXPENSIVE;
     }
 }

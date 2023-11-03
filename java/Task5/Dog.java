@@ -1,10 +1,12 @@
-package java.Task5;
+package Task5;
+
+import Task5.Cat;
 
 public class Dog extends Pet {
     private String breed;
-    private Cat.price food;
+    private Cat.Price food;
 
-    public Dog(String name, int weight, int age, String owner, String breed, Cat.price food) {
+    public Dog(String name, int weight, int age, String owner, String breed, Cat.Price food) {
         super(name, weight, age, owner);
         this.breed = breed;
         this.food = food;

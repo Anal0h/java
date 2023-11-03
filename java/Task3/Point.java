@@ -1,8 +1,8 @@
-package java.Task3;
+package Task3;
 
-public class Point {
-    private double x;
-    private double y;
+public final class Point {
+    private final double x;
+    private final double y;
 
     public Point() {
         x = 0;
@@ -16,7 +16,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return String.valueOf(x + " " + y);
+        return x + " " + y;
     }
 
     public double getX() {

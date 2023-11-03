@@ -1,4 +1,4 @@
-package java.Task2;
+package Task2;
 
 import java.util.Objects;
 
@@ -19,37 +19,30 @@ public class IntHolder {
     }
 
     public static IntHolder plus(IntHolder a, IntHolder b) {
-        IntHolder res = new IntHolder(a.elem + b.elem);
-        return res;
+        return new IntHolder(a.elem + b.elem);
     }
 
     public static IntHolder minus(IntHolder a, IntHolder b) {
-        IntHolder res = new IntHolder(a.elem - b.elem);
-        return res;
+        return new IntHolder(a.elem - b.elem);
     }
 
     public static IntHolder multiply(IntHolder a, IntHolder b) {
-        IntHolder res = new IntHolder(a.elem * b.elem);
-        return res;
+        return new IntHolder(a.elem * b.elem);
     }
 
-    public static IntHolder devide(IntHolder a, IntHolder b) {
+    public static IntHolder devide(IntHolder a, IntHolder b) throws ArithmeticException {
         if (b.elem != 0) {
-            IntHolder res = new IntHolder(a.elem / b.elem);
-            return res;
+            return new IntHolder(a.elem / b.elem);
         } else {
-            System.out.println("ERROR");
-            return new IntHolder(0);
+            throw new ArithmeticException("Деление на ноль");
         }
     }
 
-    public static IntHolder ostatok(IntHolder a, IntHolder b) {
+    public static IntHolder module(IntHolder a, IntHolder b) throws ArithmeticException {
         if (b.elem != 0) {
-            IntHolder res = new IntHolder(a.elem % b.elem);
-            return res;
+            return new IntHolder(a.elem % b.elem);
         } else {
-            System.out.println("ERROR");
-            return new IntHolder(0);
+            throw new ArithmeticException("Остаток от деления на ноль");
         }
     }
 
@@ -60,11 +53,7 @@ public class IntHolder {
     }
 
     public boolean equals(IntHolder b) {
-        if (this.elem == b.elem) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.elem == b.elem;
     }
 
     @Override

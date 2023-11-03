@@ -1,4 +1,4 @@
-package java.Task4;
+package Task4;
 
 public class Task4 {
     public static void main(String[] args) {
@@ -7,6 +7,6 @@ public class Task4 {
         car.refill(500);
         car.info();
         car.start();
-        car.getMileage();
+        car.printMileage();
     }
 }
