@@ -1,4 +1,4 @@
-package java.Task1;
+package Task1;
 
 public class Task1 {
     public static void main(String[] args) {
@@ -12,11 +12,7 @@ public class Task1 {
     static boolean equals(String s, String t) {
         String a = s.toLowerCase();
         String b = t.toLowerCase();
-        if (a.equals(b)) {
-            return true;
-        } else {
-            return false;
-        }
+        return a.equals(b);
     }
 
     static String replace(String str, String oldStr, String newStr) {
