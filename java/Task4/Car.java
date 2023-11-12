@@ -67,7 +67,7 @@ public class Car {
         System.out.println("Автомобиль проехал " + getMileage() + " км.");
     }
 
-    public static class Engine {
+    private class Engine {
         private boolean turn;
         private final int fuelCons;
 
