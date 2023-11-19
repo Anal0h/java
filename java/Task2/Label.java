@@ -1,13 +1,8 @@
-package java.Task2;
+package Task2;
 
-public class Label {
-    String type;
-
-    public Label() {
-        type = "OK";
-    }
-
-    public Label(String type) {
-        this.type = type;
-    }
+public enum Label {
+  OK,
+  SPAM,
+  NEGATIVE,
+  TOO_LONG
 }

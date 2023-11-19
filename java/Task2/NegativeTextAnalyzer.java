@@ -1,16 +1,15 @@
-package java.Task2;
+package Task2;
 
 public class NegativeTextAnalyzer extends KeywordAnalyzer {
-    public String[] keywords = {":(", "=(", ":|"};
+  public String[] keywords = {":(", "=(", ":|"};
 
-    @Override
-    public String[] keywords() {
-        return keywords;
-    }
+  @Override
+  public String[] keywords() {
+    return keywords;
+  }
 
-    @Override
-    public Label getLabel() {
-        Label label = new Label("NEGATIVE");
-        return label;
-    }
+  @Override
+  public Label getLabel() {
+    return Label.NEGATIVE;
+  }
 }
