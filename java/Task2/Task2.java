@@ -7,7 +7,7 @@ public class Task2 {
         tuple.add(3, 2);
         System.out.println(tuple.get(0));
         System.out.println(tuple.get(1));
-        System.out.println(tuple.get(5));
+        System.out.println(tuple.get(2));
         tuple.remove(0);
         System.out.println(tuple.get(0));
         tuple.remove(Integer.valueOf(3));
